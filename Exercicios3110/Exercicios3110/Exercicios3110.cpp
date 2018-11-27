@@ -160,6 +160,33 @@ void Exercicio23()
 	distancia = (tempo * velocidade);
 	litros = (distancia) / km;
 	printf("Voce andou a %i km/h em %i minutos, distancia: %i metros e gastou %i litros.\n", velocidade, tempo, distancia, litros);
+}
+
+void Exercicio24(float *a, float *b) {
+	float temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+	printf("Numero 1 = %.2f \nNumero 2 = %.2f \n\n", *a, *b);
+}
+
+void Exercicio25() {
+	float salbruto, salprev, saliq, res1, res2 = 0;
+	printf("Digite o salario bruto: \n");
+	scanf_s("%f", &salbruto);
+	salprev = (salbruto) * 0.1;
+	res1 = salprev - salbruto;
+	saliq = (salprev) * 0.05;
+	res2 = saliq - res1;
+	printf("Salario bruto: %f \n Salario liquido: %f \n", salbruto, res2);
+}
+
+void Exercicio26() {
+	int anos, res = 0;
+	printf("Digite sua idade em anos: \n");
+	scanf_s("%i", &anos);
+	res = (anos) * 365;
+	printf("Sua idade de anos em dias eh: %i\n", res);
 }*/
 
 int main()
@@ -172,7 +199,18 @@ int main()
 	//Exercicio10();
 	//Exercicio19();
 	//Exercicio23();
-
+		/*Exercicio 24
+		float *n1, *n2;
+		float p = 0, q = 0;
+		n1 = &p;
+		n2 = &q;
+		printf("Digite o primeiro numero: \n");
+		scanf_s("%f", &p);
+		printf("Digite o segundo numero: \n");
+		scanf_s("%f", &q);
+		Exercicio24(n1, n2);*/
+	//Exercicio25();
+	Exercicio26();
 
 	system("pause");
 	

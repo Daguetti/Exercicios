@@ -6,15 +6,15 @@
 #include <stdio.h>
 #include <string.h>
 
-/*void troca(float *a, float *b) {
+void Exercicio24(float *a, float *b) {
 	float temp;
 	temp = *a;
 	*a = *b;
 	*b = temp;
-	printf("Numero 1 = %f \nNumero 2 = %f \n", *a, *b);
-}*/
+	printf("Numero 1 = %.2f \nNumero 2 = %.2f \n\n", *a, *b);
+}
 
-struct Carro {
+/*struct Carro {
 	char modelo[30];
 	char marca[20];
 	int anoFab;
@@ -57,17 +57,22 @@ struct Funcionarios {
 
 void Ex2(){
 	
-}
+}*/
 
 int main()
 {
-	/*float *n1, *n2;
-	float p = 1, q = 3;
+	//Exercicio24 
+	float *n1, *n2;
+	float p = 0, q = 0;
 	n1 = &p;
 	n2 = &q;
-	troca(n1, n2);*/
+	printf("Digite o primeiro numero: \n");
+	scanf_s("%f", &p);
+	printf("Digite o segundo numero: \n");
+	scanf_s("%f", &q);
+	Exercicio24(n1, n2);
 
-	Ex1();
+	//Ex1();
 	//Ex2();
 
 
