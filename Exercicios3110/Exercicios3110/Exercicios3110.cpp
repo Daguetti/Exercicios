@@ -114,9 +114,7 @@ void Exercicio10() {
 	}
 }
 
-void Exercicio16() {
 
-}
 
 void Exercicio19()
 {
@@ -149,45 +147,20 @@ void Exercicio19()
 	for (i = 0; i < 2; i++)
 		printf("%i\t", resc[i]);
 	printf("\n\n");
-}*/
-
-/*int repeteviado() {
-	int n = 0;
-	printf("Digite um numero inteiro: \n");
-	scanf_s("%id", &n);
-	return n;
 }
 
-void Exercicio21() {
-	int n1 = 0;
-	printf("Digite a quantidade de numeros que sua sequencia vai ter: \n");
-	scanf_s("%i", &n1)
+void Exercicio23()
+{
+	int km = 12;
+	int tempo, velocidade, distancia, litros;
+	printf("Digite o tempo gasto na viagem em minutos: \n");
+	scanf_s("%i", &tempo);
+	printf("Digite a velocidade media durante a viagem em km/h: \n");
+	scanf_s("%i", &velocidade);
+	distancia = (tempo * velocidade);
+	litros = (distancia) / km;
+	printf("Voce andou a %i km/h em %i minutos, distancia: %i metros e gastou %i litros.\n", velocidade, tempo, distancia, litros);
 }*/
-
-/*int soma(int n) {
-	if (n == 0) {
-		return 0;
-	}
-	else {
-		return n + soma(n - 1);
-	}
-}*/
-
-int fatorial(int n) {
-	if (n == 1) {
-		return 1;
-	}
-	else {
-		return n * fatorial(n - 1);
-	}
-}
-
-int LerNumeroInteiro() {
-	int a;
-	printf("Digite um numero inteiro: \n");
-	scanf_s("%i", &a);
-	return a;
-}
 
 int main()
 {
@@ -198,12 +171,8 @@ int main()
 	//Exercicio8();
 	//Exercicio10();
 	//Exercicio19();
-	//Exercicio21();
+	//Exercicio23();
 
-	
-	int numero = LerNumeroInteiro();
-	int result = fatorial(numero);
-	printf("\nResultado: %i\n\n", result);
 
 	system("pause");
 	
