@@ -385,14 +385,43 @@ int Exercicio21(int vetor[4]) {
 		}
 	}
 	return total;
-}*/
+}
 
 void Exercicio22() {
 
+	int matriz[3][3];
+	int i, j;
 
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("Digite o valor da linha %i Coluna %i: ", i + 1, j + 1);
+			scanf_s("%i", &matriz[i][j]);
+		}
+	}
+
+	printf("Matriz \n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%i | ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+	printf("Matriz Transposta \n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%i | ", matriz[j][i]);
+		}
+		printf("\n");
+	}
 }
 
-/*void Exercicio23()
+void Exercicio23()
 {
 	int km = 12;
 	int tempo, velocidade, distancia, litros;
@@ -432,7 +461,116 @@ void Exercicio26() {
 	printf("Sua idade de anos em dias eh: %i\n", res);
 }
 
-void Exercicio31() {
+void Exercicio27() {
+
+	int vcom, vpag;
+
+	printf("Digite o valor da compra: \n");
+	scanf_s("%i", &vcom);
+	printf("Digite o valor entregue em dinheiro: \n");
+	scanf_s("%i", &vpag);
+
+	int troco = vpag - vcom;
+	int nota100 = 0;
+	int nota10 = 0;
+	int nota1 = 0;
+
+	if (troco > 0) {
+		nota100 = (troco - (troco % 100)) / 100;
+		nota10 = (troco % 100) / 10;
+		nota1 = (troco % 10);
+
+		printf("Notas de 100 : %i \nNotas de 10 : %i \nNotas de 1: %i \n", nota100, nota10, nota1);
+	} else {
+		printf("Faltando valor em dinheiro! \n");
+	}
+}
+
+void Exercicio28() {
+
+	int salario, quant_carros = 0, valorcarro = 0, comporcarro = 0, porcporcarro = 0, i;
+
+	printf("Digite a quantidade de carros que foram vendido no mes: \n");
+	scanf_s("%i", &quant_carros);
+
+	salario = 937 * 2;
+
+	printf("Verificacao do valor dos carros vendidos\n");
+
+	for (i = 0; i < quant_carros; i++) {
+		printf("Digite o valor do %i carro : \n", i + 1);
+		scanf_s("%i", &valorcarro);
+
+		porcporcarro = porcporcarro + (valorcarro * 0.05);
+		comporcarro = comporcarro + 50;
+		valorcarro = 0;
+	}
+
+	int valortotal = porcporcarro + comporcarro;
+
+	printf("Seu salario com comissao eh: R$ %i \n", valortotal + salario);
+}
+
+void Exercicio29() {
+
+	int x, y, z;
+
+	printf("Digite o valor de X. \n");
+	scanf_s("%i", &x);
+
+	printf("Digite o valor de Y. \n");
+	scanf_s("%i", &y);
+
+	printf("Digite o valor de Z. \n");
+	scanf_s("%i", &z);
+
+	int soma = x + y + z;
+
+	if (x < soma && y < soma && z < soma) {
+		if (x == y && x == z && y == z) {
+			printf("Triangulo equilatero. \n");
+		} else if (x == y || y == z) {
+			printf("Triangulo isoscele. \n");
+		} else if (x != y || x != z) {
+			printf("Triangulo escaleno. \n");
+		} else {
+			printf("Nao pode ser um triangulo. \n");
+		}
+	}
+}
+
+void Exercicio30() {
+
+	int n;
+	int num = 0;
+	int j = 0, i = 0, k = 0;
+
+	printf("Digite valor de 2 a 20. \n");
+	scanf_s("%i", &n);
+
+	while ((n < 2) || (n > 20))
+	{
+		printf("Numero Incorreto, favor digitar um numero entre 2 e 20. \n");
+		scanf_s("%i", &n);
+	}
+
+	for (i = 0; i < n; i++) {
+		k = 1;
+		for (j = 0; j < n; j++) {
+			if (j <i) {
+				printf("X");
+			} else {
+				printf("%i", k);
+				k = k + 1;
+			}
+		}
+		printf("\n");
+	}
+}*/
+
+
+
+/*void Exercicio31() {
 	int num[5], i = 0, count = 0;
 
 	for (int i = 0; i < 5; i++) {
@@ -444,9 +582,153 @@ void Exercicio31() {
 		}
 	}
 	printf("Numeros negativos: %i\n", count);
+}
+
+void Exercicio32() {
+
+	printf("Pesquisa de Habitantes\n");
+
+	float salario = 1;
+	float filho = 0;
+	float medsal = 0;
+	float medfil = 0;
+	float maiorsal = 0;
+	float percsal100 = 0;
+	float contsal = 0;
+	int	contfil = 0;
+	float cont = 0;
+	float contsal100 = 0;
+
+	while (salario > 0) {
+		printf("Favor digitar o seu salario (Digite um valor negativo para sair ou apresentar as estatisticas!): \n");
+		scanf_s("%f", &salario);
+
+		if (salario < 0) {
+			break;
+			system("cls");
+		}
+
+		printf("Favor digitar o numero de filhos: \n");
+		scanf_s("%f", &filho);
+
+		medsal = medsal + salario;
+		contsal = contsal + 1;
+
+		medfil = medfil + filho;
+		contfil = contfil + 1;
+
+		if (salario > maiorsal) {
+			maiorsal = salario;
+		}
+
+		if (salario < 100) {
+			contsal100 = contsal100 + 1;
+		}
+
+		cont = cont + 1;
+		printf("\n");
+		printf("Valores armazenados: \n");
+		system("pause");
+		system("cls");
+	}
+	percsal100 = (100 * contsal100) / cont;
+
+	printf("Media de salario da populacao: R$ %.2f\n", medsal / contsal);
+	printf("Media do numero de filhos: %.0f \n", medfil / contfil);
+	printf("Maior salario: R$ %.2f \n", maiorsal);
+	printf("Percentual de pessoas com salario ate R$ 100: %.0f % \n", percsal100);
+}
+
+void Exercicio33() {
+
+	float chico = 1.50;
+	float ze = 1.10;
+	int cont = 0;
+
+	while (ze < chico)
+	{
+		ze = ze + 0.03;
+		chico = chico + 0.02;
+		cont = cont + 1;
+	}
+	printf("Ze tera %.2f e chico tera %.2f com %i anos \n", ze, chico, cont);
+}
+
+void Exercicio34() {
+
+	int num = 0;
+	int i;
+	int maiorv = 0;
+	int menorv = 99999999;
+	//i<3 para teste
+	for (i = 0; i < 3; i++) {
+		printf("Digite o %i º valor: ", i + 1);
+		scanf_s("%i", &num);
+		printf("\n");
+
+		if (num > maiorv) {
+			maiorv = num;
+		} if (num < menorv) {
+			menorv = num;
+		}
+	}
+	printf("Maior valor eh: %i \nMenor valor eh: %i \n", maiorv, menorv);
+}
+
+void Exercicio35() {
+
+	int idade = 1;
+	int maioridade = 0;
+	int cont = 0;
+	int opsexo, opcabelo, opolhos = 0;
+	printf("Digite idade -1 para encerrar\n");
+
+	while (idade > 0) {
+		printf("Digite sua idade: \n");
+		scanf_s("%i", &idade);
+
+		if (idade < 0) {
+			break;
+			system("cls");
+		}
+
+		printf("Sexo \n1-Masculino \n2-Feminino \nDigite: \n");
+		scanf_s("%i", &opsexo);
+
+		printf("Cor dos olhos \n1-azuis \n2-verdes \n3-castanhos \nDigite: \n");
+		scanf_s("%i", &opolhos);
+
+		printf("Cor do cabelo \n1-louros \n2-castanhos \n3-pretos \nDigite: \n");
+		scanf_s("%i", &opcabelo);
+
+		if (idade > maioridade) {
+			maioridade = idade;
+		} if ((opsexo == 2) && (18 >= idade) && (idade <= 35) && (opolhos == 2) && (opcabelo == 1)) {
+			cont = cont++;
+		}
+
+		printf("Dado armazenado \n");
+		system("pause");
+		system("cls");
+
+	}
+	printf("A maior idade eh: %i \nA quantidade de mulheres de idade 18 a 35 de olhos verdes e cablos louros eh: %i \n", maioridade, cont);
+}
+
+void Exercicio36() {
+
+	int num[20];
+	int i;
+
+	for (i = 0; i < 20; i++) {
+		printf("Digite o %i numero :", i + 1);
+		scanf_s("%i", &num[i]);
+	}
+
+	for (i = 0; i < 20; i++) {
+		printf("%i x %i = %i \n", i + 1, num[i], (i + 1)* num[i]);
+	}
 }*/
-
-
 
 int main()
 {
@@ -519,7 +801,7 @@ int main()
 			int total = Exercicio21(vet);
 			printf("A soma dos numeros pares eh: %i \n", total);*/
 
-	Exercicio22();
+	//Exercicio22();
 	//Exercicio23();
 
 		//Exercicio 24
@@ -535,7 +817,16 @@ int main()
 
 	//Exercicio25();
 	//Exercicio26();
+	//Exercicio27();
+	//Exercicio28();
+	//Exercicio29();
+	//Exercicio30();
 	//Exercicio31();
+	//Exercicio32();
+	//Exercicio33();
+	//Exercicio34();
+	//Exercicio35();
+	//Exercicio36();
 
 	system("pause");
 	
