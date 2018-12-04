@@ -61,7 +61,7 @@ void Ex2(){
 
 int main()
 {
-	//Exercicio24 
+	//Exercicio24test
 	float *n1, *n2;
 	float p = 0, q = 0;
 	n1 = &p;
