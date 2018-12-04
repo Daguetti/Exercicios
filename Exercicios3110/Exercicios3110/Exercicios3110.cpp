@@ -566,11 +566,9 @@ void Exercicio30() {
 		}
 		printf("\n");
 	}
-}*/
+}
 
-
-
-/*void Exercicio31() {
+void Exercicio31() {
 	int num[5], i = 0, count = 0;
 
 	for (int i = 0; i < 5; i++) {
@@ -728,6 +726,103 @@ void Exercicio36() {
 	for (i = 0; i < 20; i++) {
 		printf("%i x %i = %i \n", i + 1, num[i], (i + 1)* num[i]);
 	}
+}
+
+void Exercicio37() {
+
+	int dia1, mes1, ano1, dia2, mes2, ano2, ddia, dmes, dano;
+
+	struct data
+	{
+		int dia;
+		int mes;
+		int ano;
+	};
+
+	struct data prim;
+	struct data seg;
+
+	printf("Digite a primeira data: \n");
+	printf("Dia: \n");
+	scanf_s("%i", &dia1);
+	printf("Mes: \n");
+	scanf_s("%i", &mes1);
+	printf("Ano: \n");
+	scanf_s("%i", &ano1);
+
+	printf("Digite a segunda data: \n");
+	printf("Dia: \n");
+	scanf_s("%i", &dia2);
+	printf("Mes: \n");
+	scanf_s("%i", &mes2);
+	printf("Ano: \n");
+	scanf_s("%i", &ano2);
+
+		prim.dia = dia1;
+		prim.mes = mes1;
+		prim.ano = ano1;
+
+		seg.dia = dia2;
+		seg.mes = mes2;
+		seg.ano = ano2;
+
+		ddia = prim.dia - seg.dia;
+		dmes = prim.mes - seg.mes;
+		dano = prim.ano - seg.ano;
+
+	printf("A diferença entre as datas: \n");
+	printf("Dias: %i\n", ddia);
+	printf("Meses: %i\n", dmes);
+	printf("Anos: %i\n", dano);
+}
+
+void Exercicio38() {
+
+	struct horario
+	{
+		int hora;
+		int min;
+	};
+
+	int min = 0;
+	printf("Digite um intervalo de tempo em minutos\n");
+	scanf_s("%i", &min);
+
+	struct horario A;
+	A.hora = min / 60;
+	A.min = min % 60;
+
+	printf("%i horas e %i minutos\n", A.hora, A.min);
+}
+
+void Exercicio40() {
+
+	int quant = 0, cod, total;
+
+	while (quant != -1) {
+		printf("Informe a quantidade vendida (-1 p/ sair): \n");
+		scanf_s("%i", &quant);
+
+		printf("Informe o codigo do produto: \n 1001 \t1324 \t6548 \t987 \t7623");
+		scanf_s("%i", &cod);
+
+		if (cod = 1001) {
+			total = quant * 5.32;
+			printf("Total a pagar: %i \n", total);
+		} else if (cod = 1324) {
+			total = quant * 6.45;
+			printf("Total a pagar: %i \n", total);
+		} else if (cod = 6548) {
+			total = quant * 2.37;
+			printf("Total a pagar: %i \n", total);
+		} else if (cod = 987) {
+			total = quant * 5.32;
+			printf("Total a pagar: %i \n", total);
+		} else if (cod = 7623) {
+			total = quant * 6.45;
+			printf("Total a pagar: %i \n", total);
+		}
+	}
 }*/
 
 int main()
@@ -827,6 +922,9 @@ int main()
 	//Exercicio34();
 	//Exercicio35();
 	//Exercicio36();
+	//Exercicio37();
+	//Exercicio38();
+	//Exercicio40();
 
 	system("pause");
 	
